@@ -5,7 +5,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background-color: #3066f6;
+  background-color: #B4B4B8;
 }
 .container {
   width: 80vmin;
@@ -73,4 +73,20 @@ button:hover{
 }
 .fail {
   color: #e81c4e;
+}
+
+/* CSS for restart button */
+#restart-test {
+  float: right;
+  margin-top: 20px;
+  background-color: #3066f6;
+  color: #ffffff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+#restart-test:hover {
+  cursor: pointer;
 }

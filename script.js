@@ -27,6 +27,28 @@ const renderNewQuote = async () => {
   quoteSection.innerHTML = arr.join("");
 };
 
+//Restart Test
+const restartTest = () => {
+  // Reset variables
+  mistakes = 0;
+  timer = "";
+  time = 60;
+  
+  // Reset UI
+  userInput.disabled = false;
+  userInput.value = "";
+  document.getElementById("start-test").style.display = "block";
+  document.getElementById("stop-test").style.display = "none";
+  document.querySelector(".result").style.display = "none";
+  document.getElementById("mistakes").innerText = "0";
+  document.getElementById("timer").innerText = "60s";
+  document.getElementById("wpm").innerText = "0 wpm";
+  document.getElementById("accuracy").innerText = "0 %";
+
+  // Render new quote
+  renderNewQuote();
+};
+
 //Logic for comparing input words with quote
 userInput.addEventListener("input", () => {
   let quoteChars = document.querySelectorAll(".quote-chars");
@@ -108,28 +130,6 @@ const displayResult = () => {
   document.getElementById("wpm").innerText =
     (userInput.value.length / 5 / timeTaken).toFixed(2) + " wpm";
   document.getElementById("accuracy").innerText = isNaN(accuracy) ? "0 %" : accuracy + " %";
-};
-
-//Restart Test
-const restartTest = () => {
-  // Reset variables
-  mistakes = 0;
-  timer = "";
-  time = 60;
-  
-  // Reset UI
-  userInput.disabled = false;
-  userInput.value = "";
-  document.getElementById("start-test").style.display = "block";
-  document.getElementById("stop-test").style.display = "none";
-  document.querySelector(".result").style.display = "none";
-  document.getElementById("mistakes").innerText = "0";
-  document.getElementById("timer").innerText = "60s";
-  document.getElementById("wpm").innerText = "0 wpm";
-  document.getElementById("accuracy").innerText = "0 %";
-
-  // Render new quote
-  renderNewQuote();
 };
 
 //Start Test
